@@ -1,5 +1,4 @@
-package wms.statistic.repo.service;
-
+package wms.statistic.service;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
@@ -12,7 +11,7 @@ public interface IStatistic {
 	public Map<Integer, Integer> getPeriodYearProfit(int fromYear, int toYear);
 	public Integer getMachineProfit(int machineId, LocalDate from, LocalDate to);
 	public Map<Integer, Integer>  getYearMachineProfitByPeriod(int machineId, int fromYear, int toYear);
-	public Integer getProductIncomeByPeriod(int productId, LocalDate from, LocalDate to);
+	public Integer getProductIncomeByPeriod(String productName, LocalDate from, LocalDate to);
 	public Integer getProductSellCountPeriod(String productName, LocalDate from, LocalDate to);
 	public Map<String, Integer> getSellProductsByPeriod(String prodName);
 	public List<ProductDTO> getMostProfitableProductsByPeriod(LocalDate from, LocalDate to);

@@ -26,8 +26,8 @@ public interface StatisticsRepository extends JpaRepository<SensorProductJPA, In
 
 
 	@Query(value ="SELECT sum(quantity * price) FROM selling AS s join products AS p ON s.product_id = p.product_id "
-			+ "where p.product_id =:id AND (date BETWEEN :from AND :to)", nativeQuery=true)
-	Integer selectProfitByProductByPeriod(@Param("id") int id, @Param("from") LocalDate from, 
+			+ "where p.product_name =:name AND (date BETWEEN :from AND :to)", nativeQuery=true)
+	Integer selectProfitByProductByPeriod(@Param("name") String name, @Param("from") LocalDate from, 
 			@Param("to") LocalDate to);
 
 
